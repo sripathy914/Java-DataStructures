@@ -5,7 +5,7 @@ public class Main
 		int flag=0;
 		Scanner sc=new Scanner(System.in);
 		String s=sc.next();
-		for(int i=0;i<s.length();i++)
+		for(int i=0;i<s.length()/2;i++)
 		{
 		    if(s.charAt(i)==s.charAt(s.length()-i-1))
 		        flag=0;
