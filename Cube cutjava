@@ -1,0 +1,19 @@
+/*
+  we need to cut the material where it should never be a seperate piece such that
+  who is the one to make the cut at last breaking the rule to make the piece is provided
+*/
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int a=sc.nextInt();
+		int b=sc.nextInt();
+		int cuts=(a-1)*(b-1);
+		System.out.println(cuts);
+		String res=(cuts%2==0)?"A loses":"B loses";
+		System.out.println(res);
+	}
+}
