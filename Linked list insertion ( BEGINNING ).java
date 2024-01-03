@@ -22,22 +22,17 @@ class Linkedlist
     public void append(int data)
     {
         Node newnode=new Node(data);
-        if(this.head==null)
+        if(head==null)
         {
             this.head=newnode;
             return;
         }
-        
-        Node lastnode=this.head;
-        while(lastnode.next!=null)
-        {
-            lastnode=lastnode.next;
-        }
-        lastnode.next=newnode;
+        newnode.next=this.head;
+        this.head=newnode;
     }
     
     public void printlist()
-    {
+     {
         Node curr=this.head;
         while(curr!=null)
         {
@@ -45,14 +40,6 @@ class Linkedlist
             curr=curr.next;
         }
     }
-    
-    public void del_begg()
-    {
-        Node temp=this.head;
-        this.head=this.head.next;
-        temp.next=null;
-    }
-    
 }
 
 public class Main
@@ -61,16 +48,30 @@ public class Main
     {
         Linkedlist l=new Linkedlist();
         for(int i=1;i<6;i++)
-        {
-            l.append(i);
-        }
-        l.printlist();
-        
-        System.out.println("\nAfter deletion of beginning...");
-        l.del_begg();
+        l.append(i);
         l.printlist();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
