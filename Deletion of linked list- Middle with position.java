@@ -46,19 +46,19 @@ class Linkedlist
         }
     }
     
-    public void del_middle(int data)
+    public void del_middle()
     {
-        Node prev=null;
-        while(current!=null && current.data!=value)
+        Node temp=this.head;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter element position : ");
+        int s=sc.nextInt();
+        int count=0;
+        while(temp!=null && count<s-2)
         {
-            prev=current;
-            current=current.next;
+            temp=temp.next;
+            count++;
         }
-        if(current==null)
-        {
-            System.out.println("Value not found");
-            return;
-        }
+        temp.next=temp.next.next;
     }
     
 }
@@ -75,7 +75,7 @@ public class Main
         l.printlist();
         
         System.out.println("\nAfter deletion of element...");
-        l.del_middle(3);
+        l.del_middle();
         l.printlist();
         
     }
