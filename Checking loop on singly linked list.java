@@ -45,7 +45,7 @@ class Linkedlist
         }
         else
         {
-            while(hare!=null && hare.next.next!=null)
+            while(hare!=null && hare.next!=null)
             {
                 tort=tort.next;
                 hare=hare.next.next;
