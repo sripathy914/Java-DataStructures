@@ -38,7 +38,7 @@ class Linkedlist
     public void chk_loop()
     {
         Node hare,tort;
-        hare=tort=null;
+        hare=tort=this.head;
         if(this.head==null)
         {
             System.out.println("List is empty...");
