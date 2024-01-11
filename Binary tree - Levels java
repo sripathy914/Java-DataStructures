@@ -1,0 +1,74 @@
+import java.util.*;
+class treenode
+{
+    int data;
+    treenode left,right;
+    
+    public treenode(int data)
+    {
+        this.data=data;
+        this.left=this.right=null;
+    }
+}
+
+class binarytree 
+{
+    treenode root;
+    public binarytree()
+    {
+        this.root=null;
+    }
+    
+    public int length_of_tree()
+    {
+        if(this.root==null)
+            return 0;
+
+        List<List<Integer>> result = new ArrayList();
+        
+        Queue<treenode> queue= new LinkedList<>();
+        queue.add(this.root);
+        
+        while(!queue.isEmpty()) 
+        {
+            List<Integer> levelnode = new ArrayList<>();
+            int levelsize=queue.size();
+            
+            for(int size=0;size<levelsize;size++)
+            {
+                treenode tptr=queue.poll();
+                levelnode.add(tptr.data);
+                
+                if(tptr.left!=null)
+                    queue.add(tptr.left);
+                if(tptr.right!=null)
+                    queue.add(tptr.right);
+            }
+            result.add(levelnode);
+        }
+        return result.size();
+    }
+}
+
+class Main
+{
+    public static void main(String args[])
+    {
+        binarytree tree=new binarytree();
+        
+        tree.root=new treenode(1);
+        tree.root.left=new treenode(2);
+        tree.root.right=new treenode(3);
+        
+        tree.root.left.left=new treenode(4);
+        tree.root.left.right=new treenode(5);
+        
+        tree.root.right.left=new treenode(6);
+        tree.root.right.right=new treenode(7);
+        
+        
+        System.out.print("Levels of tree : ");
+        System.out.print(tree.length_of_tree());
+    }
+}
+
